@@ -1,0 +1,8 @@
+{
+	// this is a C++-style comment
+	"name" : "John",
+	"surname": "Doe", // this is another C++-style comment
+	"address": "Liberty Plaza, 1",
+	# don't forget shell-style comments
+	"phone": "555-123-456-7890" # at end of line
+}
