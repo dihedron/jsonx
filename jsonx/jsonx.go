@@ -21,7 +21,7 @@ func Parse(input, output *os.File) {
 		log.Debugf("read line: %q\n", line)
 		matches := cppStyleComment.FindStringSubmatch(line)
 		if matches != nil {
-			log.Debugf("line has a C++ comment:\n - text  : %q\n - comment:%q", matches[1], matches[2])
+			log.Debugf("line has a C++-style comment:\n - text  : %q\n - comment:%q", matches[1], matches[2])
 			if len(strings.TrimSpace(matches[1])) > 0 {
 				fmt.Fprintf(output, "%s\n", matches[1])
 			}
@@ -29,7 +29,7 @@ func Parse(input, output *os.File) {
 		}
 		matches = shellStyleComment.FindStringSubmatch(line)
 		if matches != nil {
-			log.Debugf("line has a C++ comment:\n - text  : %q\n - comment:%q", matches[1], matches[2])
+			log.Debugf("line has a shell-style comment:\n - text  : %q\n - comment:%q", matches[1], matches[2])
 			if len(strings.TrimSpace(matches[1])) > 0 {
 				fmt.Fprintf(output, "%s\n", matches[1])
 			}
